@@ -1,0 +1,398 @@
+/*	Global reset	*/
+
+* {
+	margin: 0;
+	outline: none;
+	padding: 0;
+}
+
+html {
+	overflow: auto;
+	height:100%;
+}
+
+body{
+	background: #f6f5f3;
+	font: 15px/21px Arial, Helvetica, sans-serif;
+	height: 100%;
+}
+
+header {
+	background: #fff;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	position: relative;
+	z-index: 30;
+}
+
+footer {
+	border-top: 1px solid #e5e5e5;
+	padding: 50px;
+}
+
+h1 {
+	border-bottom: 1px solid #e5e5e5;
+	padding: 30px 0 25px 0;	
+	text-align: center;
+	font: 22px/24px Arial, Helvetica, sans-serif;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+.main-layout {
+	background: #fff;
+	margin: 0 auto;
+	max-width: 1000px;
+	position: relative;
+	width: 100%;
+}
+
+.table-wrapper {
+	text-align: center;
+}
+
+/*	eo Global reset	*/
+
+
+/*	Sticky header	*/
+
+.header-stick {
+	background: #ffdc61;
+	color: #7f7f7f;
+	display: table-header-group;
+	max-width: 974px;
+	position: fixed;
+	top: 0;
+	width: calc(100% - 26px);
+	z-index: 6;
+}
+
+.header-stick-hider {
+	background: #fff;
+	position: absolute;
+	height: 63px;
+	width: 100%;
+	z-index: 20;
+}
+
+/*	eo Sticky header	*/
+
+
+/*	Timetable	 */
+
+.table {
+	border-collapse: collapse;
+	display: table;
+	max-width: 974px;
+	margin: 30px 13px 0px 13px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 100px;
+	text-align: left;
+	width: calc(100% - 26px);
+	z-index: 0;
+}
+
+.table .header {
+	background: #ffdc61;
+	color: #7f7f7f;
+	display: table-header-group;
+	height: 30px;
+	position: relative;
+	top: auto;
+	z-index: 2;
+}
+
+.table > a:nth-child(odd) .cell::before {
+	background: #f7f7f7;
+	content:'\00a0';
+	height: 100%;
+	left: -5000px;
+	position: absolute;
+	top: 0;
+	width: 10000px;
+	z-index: -2;
+}
+
+.table .row:hover {
+	background-color: #ffeba0;
+	cursor: pointer;
+}
+
+.table .row .status-canceled {
+	color: #ff0000;
+}
+
+.table .cell {
+	display: table-cell;
+	padding: 5px;
+	position: relative;
+	vertical-align: middle;
+}
+
+.table .row .cell:hover::after {
+	background-color: #ffeba0;
+	content: '\00a0';
+	height: 10000px;
+	left: 0;
+	position: absolute;
+	top: -5000px;
+	width: 100%;
+	z-index: -1;
+}
+
+.col-type {
+	width: 40px;
+}
+
+.col-flight-no {
+	width: 100px;
+}
+
+.col-airline {
+	width: 100px;
+}
+
+.col-logo {
+	width: 100px;
+}
+
+.col-aircraft {
+	width: 100px;
+}
+
+.col-airport {
+	width: 120px;
+}
+
+.col-time {
+	width: 100px;
+}
+
+.col-note {
+	width: 100px;
+}
+
+/*	eo Timetable	 */
+
+
+/*	Checkbox's for select departure/ arrival rows only	*/
+
+input[type=checkbox]:checked + label {
+	background: #ffeba0;
+	border: solid 1px #997a00;
+	color: #000;
+}
+
+input[type=checkbox] + label {
+	background: #f5f5f5;
+	border: solid 1px #997a00;
+	border-radius: 3.1px;
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 13px;
+	padding: 4px 12px;
+	position: relative;
+	z-index: 20;
+}
+
+#is-arrival,
+#is-departure,
+.arrival-row,
+.departure-row {
+	display: none;
+}
+
+#is-arrival:checked ~ * .arrival-row, 
+#is-departure:checked ~ * .departure-row {
+	display: table-row;
+}
+
+/*	eo Checkbox's for select departure/ arrival rows only	*/
+
+
+/*	Modal dialog style's	*/
+
+.modal-dialog {
+	background: rgba(0,0,0,0.8);
+	bottom: 0;
+	display: none;
+	position: fixed;
+	left: 0;
+	pointer-events: none;
+	right: 0;
+	top: 0;
+	z-index: 100;
+}
+
+.modal-dialog:target {
+	display: block;
+	pointer-events: auto;
+}
+
+.flight-data {
+	background: #fff;
+	border-radius: 3.1px;
+	margin: 10% auto;
+	position: relative;
+	padding: 10px;
+	width: 400px;
+}
+
+.flight-data table {
+	padding-top: 10px;
+}
+
+.flight-data table td {
+	padding-right: 25px;
+}
+
+.dlg-title {
+	font: 11px/21px Arial, Helvetica, sans-serif;
+	color: #999;
+	text-transform: uppercase;
+}
+
+.dlg-title > span {
+	font: 22px/24px Arial, Helvetica, sans-serif;
+	color: #000;
+	padding-top: 5px;
+	text-transform: uppercase;	
+	display: block;
+}
+
+.close-btn {
+	background: #ffeba0;
+	border: solid 1px #997a00;
+	border-radius: 3.1px;
+	cursor: pointer;
+	display: inline-block;
+	padding: 4px 12px;
+	margin-top: 10px;
+}
+
+.notice {
+	border-color:#ddecc5;
+	background:#ddecc5;
+	padding: 0 5px;
+}
+
+/*	eo Modal dialog style's	*/
+
+
+/* При изменении ширины экрана < 1000 px */
+@media screen and (max-width: 1000px) {
+
+	/* Скрываем лого а/к */
+	.cell:nth-child(3) {
+		display: none;
+	}
+
+}
+
+/* При изменении ширины экрана < 900 px */
+@media screen and (max-width: 900px) { 
+
+	/* Сокращенное наименование Воздушго судна */
+	.cell:nth-child(5)::before {
+		content: attr(data-short);
+		font-size: 15px;
+		vertical-align: middle;
+	}
+	
+	.cell:nth-child(5) {
+		font-size:0;
+	}
+	
+	.col-aircraft {
+		width: 65px;
+	}
+
+}
+
+/* При изменении ширины экрана < 850 px */
+@media screen and (max-width: 850px) {
+
+	/* Сокращенное наименование времени вылета */
+	.header-stick .cell:nth-child(7)::before,
+	.header .cell:nth-child(7)::before {
+		content: attr(data-short);
+		font-size: 15px;
+		vertical-align: middle;
+	}
+
+	.header-stick .cell:nth-child(7),
+	.header .cell:nth-child(7) {
+		font-size:0;
+	}
+	
+	.col-time {
+		width: 40px;
+	}
+
+}
+
+/* При изменении ширины экрана < 800 px */
+@media screen and (max-width: 800px) {
+
+	/* Скрываем поле с наименованием воздушного судна */
+	.cell:nth-child(5) {
+		display: none;
+	}
+	
+	/* Скрываем поле с примечанием */
+	.cell:nth-child(8) {
+		display: none;
+	}
+	
+	/* Увеличиваем ширину поля Аэропорт назначения */
+	.col-airport {
+		width: 180px;
+	}
+
+}
+
+/* При изменении ширины экрана < 700 px */
+@media screen and (max-width: 700px) { 
+
+	/* Скрываем лого а/к */
+	.cell:nth-child(4) {
+		display: none;
+		padding: 0;
+	}
+
+}
+
+/* При изменении ширины экрана < 600 px */
+@media screen and (max-width: 600px) { 
+
+	/* Сокращенное наименование "Номер рейса", "Аэропорт" */
+	.header-stick .cell:nth-child(2)::before,
+	.header .cell:nth-child(2)::before,
+	.header-stick .cell:nth-child(6)::before,
+	.header .cell:nth-child(6)::before {
+		content: attr(data-short);
+		font-size: 15px;
+		vertical-align: middle;
+	}
+
+	.header-stick .cell:nth-child(2),
+	.header .cell:nth-child(2),
+	.header-stick .cell:nth-child(6),
+	.header .cell:nth-child(6) {
+		font-size:0;
+	}
+	
+	.col-flight-no {
+		width: 60px;
+	}
+	
+	.col-airport {
+		width: 100px;
+	}
+
+}
