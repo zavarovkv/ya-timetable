@@ -279,9 +279,13 @@ input[type=checkbox] + label {
 }
 
 .notice {
-	border-color:#ddecc5;
-	background:#ddecc5;
+	background: #ddecc5;
 	padding: 0 5px;
+}
+
+.notice-wrn {
+	background: #ff0000;
+	padding: 0 5px;	
 }
 
 /*	eo Modal dialog style's	*/
