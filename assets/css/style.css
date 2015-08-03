@@ -107,7 +107,7 @@ a {
 	z-index: 2;
 }
 
-.table > a:nth-child(odd) .cell::before {
+.table > a:nth-child(odd) .cell::after {
 	background: #f7f7f7;
 	content:'\00a0';
 	height: 100%;
@@ -221,8 +221,8 @@ input[type=checkbox] + label {
 	background: rgba(0,0,0,0.8);
 	bottom: 0;
 	display: none;
-	position: fixed;
 	left: 0;
+	position: fixed;
 	pointer-events: none;
 	right: 0;
 	top: 0;
@@ -240,11 +240,11 @@ input[type=checkbox] + label {
 	margin: 10% auto;
 	position: relative;
 	padding: 10px;
-	width: 400px;
+	width: 410px;
 }
 
 .flight-data table {
-	padding-top: 10px;
+	padding: 0 10px 45px 0;
 }
 
 .flight-data table td {
@@ -267,12 +267,15 @@ input[type=checkbox] + label {
 
 .close-btn {
 	background: #ffeba0;
+	bottom: 0;
 	border: solid 1px #997a00;
 	border-radius: 3.1px;
 	cursor: pointer;
 	display: inline-block;
+	margin: 10px;
 	padding: 4px 12px;
-	margin-top: 10px;
+	position: absolute;
+	right: 0;
 }
 
 .notice {
@@ -284,20 +287,22 @@ input[type=checkbox] + label {
 /*	eo Modal dialog style's	*/
 
 
-/* При изменении ширины экрана < 1000 px */
+/* Style's for diff screen width */
+
+/* Сhange the width of the screen < 1000px */
 @media screen and (max-width: 1000px) {
 
-	/* Скрываем лого а/к */
+	/* Hide airline logo */
 	.cell:nth-child(3) {
 		display: none;
 	}
 
 }
 
-/* При изменении ширины экрана < 900 px */
+/* Change the width of the screen < 900px */
 @media screen and (max-width: 900px) { 
 
-	/* Сокращенное наименование Воздушго судна */
+	/* Short name of the aircraft */
 	.cell:nth-child(5)::before {
 		content: attr(data-short);
 		font-size: 15px;
@@ -314,10 +319,10 @@ input[type=checkbox] + label {
 
 }
 
-/* При изменении ширины экрана < 850 px */
+/* Change the width of the screen < 850px */
 @media screen and (max-width: 850px) {
 
-	/* Сокращенное наименование времени вылета */
+	/* Short name of the arrival/ departure time */
 	.header-stick .cell:nth-child(7)::before,
 	.header .cell:nth-child(7)::before {
 		content: attr(data-short);
@@ -336,30 +341,30 @@ input[type=checkbox] + label {
 
 }
 
-/* При изменении ширины экрана < 800 px */
+/* Change the width of the screen < 800px */
 @media screen and (max-width: 800px) {
 
-	/* Скрываем поле с наименованием воздушного судна */
+	/* Hide aircraft */
 	.cell:nth-child(5) {
 		display: none;
 	}
 	
-	/* Скрываем поле с примечанием */
+	/* Hide note */
 	.cell:nth-child(8) {
 		display: none;
 	}
 	
-	/* Увеличиваем ширину поля Аэропорт назначения */
+	/* Increase width of the Airport of destination */
 	.col-airport {
 		width: 180px;
 	}
 
 }
 
-/* При изменении ширины экрана < 700 px */
+/* Change the width of the screen < 700px */
 @media screen and (max-width: 700px) { 
 
-	/* Скрываем лого а/к */
+	/* Hide airline logo */
 	.cell:nth-child(4) {
 		display: none;
 		padding: 0;
@@ -367,10 +372,10 @@ input[type=checkbox] + label {
 
 }
 
-/* При изменении ширины экрана < 600 px */
+/* Change the width of the screen < 600px */
 @media screen and (max-width: 600px) { 
 
-	/* Сокращенное наименование "Номер рейса", "Аэропорт" */
+	/* Short name of the Airport and Number of flight */
 	.header-stick .cell:nth-child(2)::before,
 	.header .cell:nth-child(2)::before,
 	.header-stick .cell:nth-child(6)::before,
@@ -396,3 +401,5 @@ input[type=checkbox] + label {
 	}
 
 }
+
+/* eo Style's for diff screen width */
