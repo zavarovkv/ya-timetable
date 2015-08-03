@@ -107,7 +107,7 @@ a {
 	z-index: 2;
 }
 
-.table > a:nth-child(odd) .cell::before {
+.table > a:nth-child(odd) .cell::after {
 	background: #f7f7f7;
 	content:'\00a0';
 	height: 100%;
@@ -240,11 +240,11 @@ input[type=checkbox] + label {
 	margin: 10% auto;
 	position: relative;
 	padding: 10px;
-	width: 400px;
+	width: 410px;
 }
 
 .flight-data table {
-	padding-top: 10px;
+	padding: 0 10px 45px 0;
 }
 
 .flight-data table td {
@@ -267,12 +267,15 @@ input[type=checkbox] + label {
 
 .close-btn {
 	background: #ffeba0;
+	bottom: 0;
 	border: solid 1px #997a00;
 	border-radius: 3.1px;
 	cursor: pointer;
 	display: inline-block;
+	margin: 10px;
 	padding: 4px 12px;
-	margin-top: 10px;
+	position: absolute;
+	right: 0;
 }
 
 .notice {
